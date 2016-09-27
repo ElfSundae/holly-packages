@@ -1,0 +1,22 @@
+/*
+ * 将 Glyphicons 替换成 Font-Awesome
+ */
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  font-family: 'FontAwesome';
+}
+table.dataTable thead .sorting:after {
+  content: "\f0dc";
+  /* fa-sort */
+}
+table.dataTable thead .sorting_asc:after {
+  content: "\f160";
+  /* fa-sort-amount-asc */
+}
+table.dataTable thead .sorting_desc:after {
+  content: "\f161";
+  /* fa-sort-amount-desc */
+}
