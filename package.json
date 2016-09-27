@@ -1,0 +1,30 @@
+{
+  "name": "holly",
+  "version": "1.0.0",
+  "description": "Packages for Holly app.",
+  "author": "Elf Sundae",
+  "license": "MIT",
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "repository": {},
+  "devDependencies": {
+    "admin-lte": "^2.3.6",
+    "blueimp-md5": "^2.3.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12",
+    "datatables.net-responsive": "^2.1.0",
+    "datatables.net-responsive-bs": "^2.1.0",
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "jquery": "^1.12.4",
+    "jquery-form": "malsup/form",
+    "jquery-slimscroll": "^1.3.8",
+    "laravel-elixir": "^6.0.0-11",
+    "spin.js": "^2.3.2"
+  }
+}
