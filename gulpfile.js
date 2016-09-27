@@ -17,6 +17,10 @@ elixir(mix => {
   // or sass:
   // mix.sass('./bootstrap-sass/_bootstrap.scss');
 
+  // Font-Awesome
+  mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
+    .copy('./node_modules/font-awesome/fonts', 'build/fonts');
+
   // AdminLTE
   mix.less([
       './admin-lte/AdminLTE.less',
