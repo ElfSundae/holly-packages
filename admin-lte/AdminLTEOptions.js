@@ -5,4 +5,4 @@
       animationSpeed: 150
     };
   }
-})();
+}());
