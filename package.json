@@ -3,12 +3,23 @@
   "version": "1.0.0",
   "description": "Packages for Holly app.",
   "author": "Elf Sundae",
+  "homepage": "https://github.com/ElfSundae/holly-packages",
   "license": "MIT",
   "scripts": {
     "prod": "gulp --production",
     "dev": "gulp watch"
   },
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElfSundae/holly-packages.git"
+  },
+  "keywords": [
+    "Holly",
+    "components"
+  ],
+  "bugs": {
+    "url": "https://github.com/ElfSundae/holly-packages/issues"
+  },
   "devDependencies": {
     "admin-lte": "^2.3.6",
     "blueimp-md5": "^2.3.1",
