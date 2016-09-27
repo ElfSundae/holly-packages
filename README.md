@@ -14,6 +14,7 @@ Packages for Holly app.
 ## AdminLTE
 
 - Removed Google Fonts.
+- Fixed `main-footer` flash when dynamic change the page content's height on DOM loading. e.g. shows a datatables via Ajax on DOM ready.
 
 ## Bootstrap
 

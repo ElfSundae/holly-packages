@@ -17,7 +17,17 @@ elixir(mix => {
   // mix.sass('./bootstrap-sass/_bootstrap.scss');
 
   // AdminLTE
-  mix.less('./admin-lte/AdminLTE.less');
+  mix.less([
+      './admin-lte/AdminLTE.less',
+      './node_modules/admin-lte/build/less/skins/_all-skins.less',
+      './admin-lte/AdminLTE-fixed.less'
+    ], 'build/css/AdminLTE.css')
+    .scripts([
+      './admin-lte/AdminLTEOptions.js',
+      './node_modules/admin-lte/dist/js/app.js',
+      './admin-lte/AdminLTE-fixed.js'
+    ], 'build/js/AdminLTE.js')
+    .copy('./node_modules/admin-lte/dist/img/boxed-bg.jpg', 'build/img');
 
   // Bootbox
   mix.scripts([
