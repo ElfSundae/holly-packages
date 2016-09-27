@@ -1,3 +1,8 @@
-var AdminLTEOptions = {
-    animationSpeed: 150
-};
+;
+(function() {
+  if (!window.AdminLTEOptions) {
+    window.AdminLTEOptions = {
+      animationSpeed: 150
+    };
+  }
+})();

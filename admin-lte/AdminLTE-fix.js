@@ -2,6 +2,8 @@
  * @see AdminLTE-fixed.less
  */
 ;
-$(document).ready(function() {
-  $('div.wrapper > div.content-wrapper').show();
-});
+(function($) {
+  $(document).ready(function() {
+    $('div.wrapper > div.content-wrapper').show();
+  });
+})(jQuery);
