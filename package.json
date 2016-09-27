@@ -38,6 +38,8 @@
     "jquery-form": "malsup/form",
     "jquery-slimscroll": "^1.3.8",
     "laravel-elixir": "^6.0.0-11",
+    "laravel-elixir-replace": "^1.1.2",
+    "lightbox2": "^2.8.2",
     "spin.js": "^2.3.2"
   }
 }

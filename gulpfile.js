@@ -4,6 +4,8 @@
 
 const elixir = require('laravel-elixir');
 
+require('laravel-elixir-replace');
+
 elixir.config.publicPath = 'build';
 elixir.config.css.minifier.pluginOptions = {
   compatibility: 'ie7',
@@ -61,5 +63,12 @@ elixir(mix => {
     './node_modules/bootbox/bootbox.js',
     './bootbox/bootbox-fix.js'
   ], 'build/js/bootbox.js');
+
+  // lightbox2
+  mix.replace('./node_modules/lightbox2/src/css/lightbox.css', [
+      ['../images/', '../img/lightbox/']
+    ], './lightbox2/lightbox.css')
+    .copy('./node_modules/lightbox2/src/js/lightbox.js', 'build/js')
+    .copy('./node_modules/lightbox2/src/images', 'build/img/lightbox');
 
 });
