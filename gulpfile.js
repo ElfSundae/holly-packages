@@ -19,4 +19,10 @@ elixir(mix => {
   // AdminLTE
   mix.less('./admin-lte/AdminLTE.less');
 
+  // Bootbox
+  mix.scripts([
+    './node_modules/bootbox/bootbox.js',
+    './bootbox/bootbox-fixed.js'
+  ], 'build/js/bootbox.js');
+
 });

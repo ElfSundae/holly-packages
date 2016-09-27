@@ -12,6 +12,7 @@
   "devDependencies": {
     "admin-lte": "^2.3.6",
     "blueimp-md5": "^2.3.1",
+    "bootbox": "makeusabrew/bootbox",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "datatables.net": "^1.10.12",
