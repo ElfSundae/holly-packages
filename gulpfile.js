@@ -14,6 +14,7 @@ elixir(mix => {
 
   // Bootstrap
   mix.less('./bootstrap/bootstrap.less');
+  // or sass:
   // mix.sass('./bootstrap-sass/_bootstrap.scss');
 
   // AdminLTE
