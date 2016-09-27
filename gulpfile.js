@@ -50,6 +50,12 @@ elixir(mix => {
     ], 'build/js/AdminLTE.js')
     .copy('./node_modules/admin-lte/dist/img/boxed-bg.jpg', 'build/img');
 
+  // FastClick
+  mix.scripts([
+    './node_modules/fastclick/lib/fastclick.js',
+    './fastclick/attach.js'
+  ], 'build/js/fastclick.js');
+
   // Bootbox
   mix.scripts([
     './node_modules/bootbox/bootbox.js',
