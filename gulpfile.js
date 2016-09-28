@@ -4,7 +4,7 @@
 
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-replace');
+require('laravel-elixir-replace2');
 
 elixir.config.publicPath = 'build';
 elixir.config.css.minifier.pluginOptions = {
@@ -13,29 +13,6 @@ elixir.config.css.minifier.pluginOptions = {
 };
 
 elixir(mix => {
-
-  // Bootstrap
-  mix.less('./bootstrap/bootstrap.less');
-  // or sass:
-  // mix.sass('./bootstrap-sass/_bootstrap.scss');
-
-  // Font-Awesome
-  mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
-    .copy('./node_modules/font-awesome/fonts', 'build/fonts');
-
-  // dataTables
-  mix.styles([
-      './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
-      './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-      './datatables.net/datatables-fix.css'
-    ], 'build/css/dataTables.css')
-    .scripts([
-      "./node_modules/datatables.net/js/jquery.dataTables.js",
-      "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
-      "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
-      "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
-      "./datatables.net/datatablesDefaults.js",
-    ], 'build/js/dataTables.js');
 
   // AdminLTE
   mix.less([
@@ -52,17 +29,40 @@ elixir(mix => {
     ], 'build/js/AdminLTE.js')
     .copy('./node_modules/admin-lte/dist/img/boxed-bg.jpg', 'build/img');
 
+  // Bootbox
+  mix.scripts([
+    './node_modules/bootbox/bootbox.js',
+    './bootbox/bootbox-fix.js'
+  ], 'build/js/bootbox.js');
+
+  // Bootstrap
+  mix.less('./bootstrap/bootstrap.less');
+  // or sass:
+  // mix.sass('./bootstrap-sass/_bootstrap.scss');
+
+  // dataTables
+  mix.styles([
+      './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
+      './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
+      './datatables.net/datatables-fix.css'
+    ], 'build/css/dataTables.css')
+    .scripts([
+      "./node_modules/datatables.net/js/jquery.dataTables.js",
+      "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
+      "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
+      "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
+      "./datatables.net/datatablesDefaults.js",
+    ], 'build/js/dataTables.js');
+
   // FastClick
   mix.scripts([
     './node_modules/fastclick/lib/fastclick.js',
     './fastclick/attach.js'
   ], 'build/js/fastclick.js');
 
-  // Bootbox
-  mix.scripts([
-    './node_modules/bootbox/bootbox.js',
-    './bootbox/bootbox-fix.js'
-  ], 'build/js/bootbox.js');
+  // Font-Awesome
+  mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
+    .copy('./node_modules/font-awesome/fonts', 'build/fonts');
 
   // lightbox2
   mix.replace('./node_modules/lightbox2/src/css/lightbox.css', [
