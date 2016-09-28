@@ -20,7 +20,7 @@ elixir(mix => {
       'node_modules/admin-lte/build/less/AdminLTE.less',
       /(@import[^";]*")([^";]+.*)/gi,
       '$1node_modules/admin-lte/build/less/$2',
-      'admin-lte/AdminLTE.less'
+      'admin-lte'
     )
     .replace(
       'admin-lte/AdminLTE.less',
@@ -33,6 +33,28 @@ elixir(mix => {
     './node_modules/bootbox/bootbox.js',
     './bootbox/bootbox-fix.js'
   ], getMinifyPath('bootbox/bootbox.js'));
+
+  // Bootstrap
+  mix.replace(
+      'node_modules/bootstrap/less/bootstrap.less',
+      /(@import[^";]*")([^";]+.*)/gi,
+      '$1node_modules/bootstrap/less/$2',
+      'bootstrap'
+    )
+    .replace(
+      'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss',
+      /(@import[^";]*")([^";]+.*)/gi,
+      '$1node_modules/bootstrap-sass/assets/stylesheets/$2',
+      'bootstrap'
+    )
+    .replace([
+        'bootstrap/bootstrap.less',
+        'bootstrap/_bootstrap.scss'
+      ],
+      /(.+glyphicons.+)/gi,
+      '// $1',
+      'bootstrap'
+    )
 
 });
 return;
