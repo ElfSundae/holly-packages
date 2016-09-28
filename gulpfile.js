@@ -12,6 +12,32 @@ elixir.config.css.minifier.pluginOptions = {
   keepSpecialComments: 0
 };
 
+/**
+ * Custom third-party packages.
+ *
+ * You do not need to do this in your app, just use the result file in holly-packages directly.
+ */
+elixir(mix => {
+
+  // AdminLTE
+  mix.replace(
+      'node_modules/admin-lte/build/less/AdminLTE.less',
+      /(@import[^";]*")([^";]+.*)/gi,
+      '$1node_modules/admin-lte/build/less/$2',
+      'admin-lte/AdminLTE.less'
+    )
+    .replace(
+      'admin-lte/AdminLTE.less',
+      /(.+url\(http.+)/gi,
+      '// $1'
+    );
+
+});
+return;
+
+/**
+ * Examples for Laravel Elixir usage.
+ */
 elixir(mix => {
 
   // AdminLTE
