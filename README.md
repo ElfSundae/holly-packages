@@ -9,6 +9,10 @@ Packages for Holly app.
 - [AdminLTE](#adminlte)
 - [Bootbox](#bootbox)
 - [Bootstrap](#bootstrap)
+- [DataTables.net](#datatablesnet)
+- [FastClick](#fastclick)
+- [WebViewJavascriptBridge](#webviewjavascriptbridge)
+- [Lightbox2](#lightbox2)
 
 <!-- /MarkdownTOC -->
 
@@ -25,3 +29,35 @@ Packages for Holly app.
 ## Bootstrap
 
 - Removed Glyphicons.
+
+## DataTables.net
+
+- Replaced Glyphicons to Font-Awesome.
+- Applied default options: 
+  ```
+  "responsive": true,
+  "processing": true,
+  "serverSide": true,
+  "pagingType": "full_numbers",
+  "language": {
+    ...
+  }
+  ```
+
+## FastClick
+
+- Attached for `document.body` automatically on `DOMContentLoaded`.
+
+## WebViewJavascriptBridge
+
+- Added alias `JSBridge` to `WebViewJavascriptBridge` object.
+- Setup JSBridge when `AppClient.isApiClient` is `true`.
+- Added alias `on` to `JSBridge.registerHandler` method.
+- Added `send` method to call the default handler named `"default"`.
+- Added `api` method to send `{ action: "", data: ... }`.
+- Invoke `JSBridgeReady(bridge)` function when JSBridge is ready.
+
+## Lightbox2
+
+- Replaced images location from `images` to `img/lightbox`.
+
