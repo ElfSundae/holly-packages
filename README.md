@@ -2,7 +2,15 @@
 
 Packages for Holly app.
 
-**All changes to third-party packages are documented below:**
+## Installation
+
+```
+npm install --save-dev holly-packages
+```
+
+## Changes
+
+> All changes to third-party packages are documented below:
 
 <!-- MarkdownTOC -->
 
@@ -16,21 +24,21 @@ Packages for Holly app.
 
 <!-- /MarkdownTOC -->
 
-## AdminLTE
+### AdminLTE
 
 - Removed Google Fonts.
 - Fixed `main-footer` flash when dynamic change the page content's height on DOM loading. e.g. shows a datatables via Ajax on DOM ready.
 
-## Bootbox
+### Bootbox
 
 - Fixed position of dialog to the center of screen.
 - Automatically detect browser language.
 
-## Bootstrap
+### Bootstrap
 
 - Removed Glyphicons.
 
-## DataTables.net
+### DataTables.net
 
 - Replaced Glyphicons to Font-Awesome.
 - Applied default options: 
@@ -44,11 +52,11 @@ Packages for Holly app.
   }
   ```
 
-## FastClick
+### FastClick
 
 - Attached for `document.body` automatically on `DOMContentLoaded`.
 
-## WebViewJavascriptBridge
+### WebViewJavascriptBridge
 
 - Added alias `JSBridge` to `WebViewJavascriptBridge` object.
 - Setup JSBridge when `AppClient.isApiClient` is `true`.
@@ -57,7 +65,7 @@ Packages for Holly app.
 - Added `api` method to send `{ action: "", data: ... }`.
 - Invoke `JSBridgeReady(bridge)` function when JSBridge is ready.
 
-## Lightbox2
+### Lightbox2
 
 - Replaced images location from `images` to `img/lightbox`.
 
