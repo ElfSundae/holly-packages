@@ -131,7 +131,7 @@ elixir(mix => {
         './icheck/css/skins/polaris/polaris.css',
         './icheck/css/skins/square/_all.css'
       ],
-      'icheck/css/skins/all.css'
+      getMinifyPath('icheck/css/skins/all.css')
     )
     .copy(
       'node_modules/icheck/icheck.js',
