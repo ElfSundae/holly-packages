@@ -2,11 +2,12 @@ const elixir = require('laravel-elixir');
 
 require('laravel-elixir-replace2');
 
-elixir.config.publicPath = 'build';
 elixir.config.css.minifier.pluginOptions = {
   compatibility: 'ie7',
   keepSpecialComments: 0
 };
+
+elixir.config.publicPath = 'build';
 
 /**
  * Custom third-party packages.
@@ -32,7 +33,7 @@ elixir(mix => {
   mix.scripts([
     './node_modules/bootbox/bootbox.js',
     './bootbox/bootbox-fix.js'
-  ], getMinifyPath('bootbox/bootbox.js'));
+  ], getMinifyPath('bootbox/dist/bootbox.js'));
 
   // Bootstrap
   mix.replace(
@@ -54,7 +55,47 @@ elixir(mix => {
       /(.+glyphicons.+)/gi,
       '// $1',
       'bootstrap'
+    );
+
+  // dataTables
+  mix.styles([
+      './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
+      './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
+      './datatables.net/datatables-fix.css'
+    ], getMinifyPath('datatables.net/dist/css/dataTables-responsive-bs.css'))
+    .scripts([
+      "./node_modules/datatables.net/js/jquery.dataTables.js",
+      "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
+      "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
+      "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
+      "./datatables.net/datatablesDefaults.js",
+    ], getMinifyPath('datatables.net/dist/js/dataTables-responsive-bs.js'));
+
+  // FastClick
+  mix.scripts([
+    './node_modules/fastclick/lib/fastclick.js',
+    './fastclick/attach.js'
+  ], getMinifyPath('fastclick/dist/attach.js'));
+
+  // lightbox2
+  mix.replace(
+      './node_modules/lightbox2/src/css/lightbox.css',
+      '../images/',
+      '../img/lightbox/',
+      'lightbox2'
     )
+    .styles(
+      './lightbox2/lightbox.css',
+      getMinifyPath('lightbox2/dist/css/lightbox.css')
+    )
+    .scripts(
+      './node_modules/lightbox2/src/js/lightbox.js',
+      getMinifyPath('lightbox2/dist/js/lightbox.js')
+    )
+    .copy(
+      './node_modules/lightbox2/dist/images',
+      'lightbox2/dist/img'
+    );
 
 });
 return;
@@ -84,36 +125,9 @@ elixir(mix => {
   // or sass:
   // mix.sass('./bootstrap-sass/_bootstrap.scss');
 
-  // dataTables
-  mix.styles([
-      './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
-      './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-      './datatables.net/datatables-fix.css'
-    ], 'build/css/dataTables.css')
-    .scripts([
-      "./node_modules/datatables.net/js/jquery.dataTables.js",
-      "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
-      "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
-      "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
-      "./datatables.net/datatablesDefaults.js",
-    ], 'build/js/dataTables.js');
-
-  // FastClick
-  mix.scripts([
-    './node_modules/fastclick/lib/fastclick.js',
-    './fastclick/attach.js'
-  ], 'build/js/fastclick.js');
-
   // Font-Awesome
   mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
     .copy('./node_modules/font-awesome/fonts', 'build/fonts');
-
-  // lightbox2
-  mix.replace('./node_modules/lightbox2/src/css/lightbox.css', [
-      ['../images/', '../img/lightbox/']
-    ], './lightbox2/lightbox.css')
-    .copy('./node_modules/lightbox2/src/js/lightbox.js', 'build/js')
-    .copy('./node_modules/lightbox2/src/images', 'build/img/lightbox');
 
 });
 
