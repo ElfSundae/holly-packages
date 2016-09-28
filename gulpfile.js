@@ -107,7 +107,7 @@ elixir(mix => {
 
   // lightbox2
   mix.replace(
-      './node_modules/lightbox2/src/css/lightbox.css',
+      'node_modules/lightbox2/src/css/lightbox.css',
       '../images/',
       '../img/lightbox/',
       'lightbox2'
