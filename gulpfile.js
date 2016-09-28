@@ -122,7 +122,7 @@ elixir(mix => {
     )
     .copy(
       './node_modules/lightbox2/dist/images',
-      'lightbox2/dist/img'
+      'lightbox2/dist/img/lightbox'
     );
 
 });
