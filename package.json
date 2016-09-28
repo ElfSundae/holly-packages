@@ -14,13 +14,15 @@
     "url": "git+https://github.com/ElfSundae/holly-packages.git"
   },
   "keywords": [
-    "Holly",
+    "holly",
+    "laravel",
+    "elixir",
     "components"
   ],
   "bugs": {
     "url": "https://github.com/ElfSundae/holly-packages/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "admin-lte": "^2.3.6",
     "blueimp-md5": "^2.3.1",
     "bootbox": "makeusabrew/bootbox",
