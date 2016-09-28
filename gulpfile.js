@@ -27,13 +27,35 @@ elixir(mix => {
       'admin-lte/AdminLTE.less',
       /(.+url\(http.+)/gi,
       '// $1'
+    )
+    .less([
+        './admin-lte/AdminLTE.less',
+        './node_modules/admin-lte/build/less/skins/_all-skins.less',
+        './admin-lte/AdminLTE-fix.less',
+        './admin-lte/AdminLTE-custom.less'
+      ],
+      getMinifyPath('admin-lte/dist/css/AdminLTE.css')
+    )
+    .scripts([
+        './admin-lte/AdminLTEOptions.js',
+        './node_modules/admin-lte/dist/js/app.js',
+        './admin-lte/AdminLTE-fix.js',
+        './admin-lte/AdminLTE-custom.js'
+      ],
+      getMinifyPath('admin-lte/dist/js/AdminLTE.js')
+    )
+    .copy(
+      'node_modules/admin-lte/dist/img/boxed-bg.jpg',
+      'admin-lte/dist/img'
     );
 
   // Bootbox
   mix.scripts([
-    './node_modules/bootbox/bootbox.js',
-    './bootbox/bootbox-fix.js'
-  ], getMinifyPath('bootbox/dist/bootbox.js'));
+      './node_modules/bootbox/bootbox.js',
+      './bootbox/bootbox-fix.js'
+    ],
+    getMinifyPath('bootbox/dist/bootbox.js')
+  );
 
   // Bootstrap
   mix.replace(
@@ -59,23 +81,29 @@ elixir(mix => {
 
   // dataTables
   mix.styles([
-      './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
-      './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-      './datatables.net/datatables-fix.css'
-    ], getMinifyPath('datatables.net/dist/css/dataTables-responsive-bs.css'))
+        './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
+        './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
+        './datatables.net/datatables-fix.css'
+      ],
+      getMinifyPath('datatables.net/dist/css/dataTables-responsive-bs.css')
+    )
     .scripts([
-      "./node_modules/datatables.net/js/jquery.dataTables.js",
-      "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
-      "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
-      "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
-      "./datatables.net/datatablesDefaults.js",
-    ], getMinifyPath('datatables.net/dist/js/dataTables-responsive-bs.js'));
+        "./node_modules/datatables.net/js/jquery.dataTables.js",
+        "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
+        "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
+        "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
+        "./datatables.net/datatablesDefaults.js",
+      ],
+      getMinifyPath('datatables.net/dist/js/dataTables-responsive-bs.js')
+    );
 
   // FastClick
   mix.scripts([
-    './node_modules/fastclick/lib/fastclick.js',
-    './fastclick/attach.js'
-  ], getMinifyPath('fastclick/dist/attach.js'));
+      './node_modules/fastclick/lib/fastclick.js',
+      './fastclick/attach.js'
+    ],
+    getMinifyPath('fastclick/dist/fastclick.js')
+  );
 
   // lightbox2
   mix.replace(
@@ -98,32 +126,14 @@ elixir(mix => {
     );
 
 });
-return;
 
 /**
  * Examples for Laravel Elixir usage.
  */
 elixir(mix => {
 
-  // AdminLTE
-  mix.less([
-      './admin-lte/AdminLTE.less',
-      './node_modules/admin-lte/build/less/skins/_all-skins.less',
-      './admin-lte/AdminLTE-fix.less',
-      './admin-lte/AdminLTE-custom.less'
-    ], 'build/css/AdminLTE.css')
-    .scripts([
-      './admin-lte/AdminLTEOptions.js',
-      './node_modules/admin-lte/dist/js/app.js',
-      './admin-lte/AdminLTE-fix.js',
-      './admin-lte/AdminLTE-custome.js'
-    ], 'build/js/AdminLTE.js')
-    .copy('node_modules/admin-lte/dist/img/boxed-bg.jpg', 'build/img');
-
   // Bootstrap
   mix.less('./bootstrap/bootstrap.less');
-  // or sass:
-  // mix.sass('./bootstrap-sass/_bootstrap.scss');
 
   // Font-Awesome
   mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
@@ -138,5 +148,5 @@ elixir(mix => {
  * @return {string}
  */
 function getMinifyPath(path) {
-  return elixir.inProduction ? path.replace(/(\.[^\.]+)/, '.min$1') : path;
+  return elixir.inProduction ? path.replace(/(\.[^\.]+$)/, '.min$1') : path;
 }
