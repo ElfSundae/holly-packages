@@ -105,6 +105,39 @@ elixir(mix => {
     getMinifyPath('fastclick/dist/fastclick.js')
   );
 
+  // iCheck
+  var icheckSkins = [
+    'flat', 'futurico', 'line', 'minimal', 'polaris', 'square'
+  ];
+
+  icheckSkins.forEach(function(skin) {
+    mix = mix.replace(
+        'node_modules/icheck/skins/' + skin + '/*.css',
+        /(url\()([^\.]+.png\))/gi,
+        '$1../img/icheck/' + skin + '/$2',
+        'icheck/css/skins/' + skin
+      )
+      .copy(
+        'node_modules/icheck/skins/' + skin + '/*.png',
+        'icheck/img/icheck/' + skin
+      );
+  });
+
+  mix.styles([
+        './icheck/css/skins/flat/_all.css',
+        './icheck/css/skins/futurico/futurico.css',
+        './icheck/css/skins/line/_all.css',
+        './icheck/css/skins/minimal/_all.css',
+        './icheck/css/skins/polaris/polaris.css',
+        './icheck/css/skins/square/_all.css'
+      ],
+      'icheck/css/skins/all.css'
+    )
+    .copy(
+      'node_modules/icheck/icheck.js',
+      'icheck/js'
+    );
+
   // lightbox2
   mix.replace(
       'node_modules/lightbox2/src/css/lightbox.css',
@@ -121,7 +154,7 @@ elixir(mix => {
       getMinifyPath('lightbox2/dist/js/lightbox.js')
     )
     .copy(
-      './node_modules/lightbox2/dist/images',
+      'node_modules/lightbox2/dist/images',
       'lightbox2/dist/img/lightbox'
     );
 
@@ -137,7 +170,7 @@ elixir(mix => {
 
   // Font-Awesome
   mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
-    .copy('./node_modules/font-awesome/fonts', 'build/fonts');
+    .copy('node_modules/font-awesome/fonts', 'build/fonts');
 
 });
 
