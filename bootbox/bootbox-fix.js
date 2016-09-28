@@ -1,6 +1,6 @@
 /**
  *
- * Fixed Bootbox
+ * Fix Bootbox
  *
  * 1. 自动检测浏览器语言。
  * 2. 设置 dialog 居中在浏览器显示。

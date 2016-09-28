@@ -1,7 +1,3 @@
-/*!
- * This is an example for elixir usage.
- */
-
 const elixir = require('laravel-elixir');
 
 require('laravel-elixir-replace2');
@@ -32,8 +28,13 @@ elixir(mix => {
       '// $1'
     );
 
+  // Bootbox
+  mix.scripts([
+    './node_modules/bootbox/bootbox.js',
+    './bootbox/bootbox-fix.js'
+  ], 'bootbox/bootbox.js');
+
 });
-return;
 
 /**
  * Examples for Laravel Elixir usage.
@@ -53,13 +54,7 @@ elixir(mix => {
       './admin-lte/AdminLTE-fix.js',
       './admin-lte/AdminLTE-custome.js'
     ], 'build/js/AdminLTE.js')
-    .copy('./node_modules/admin-lte/dist/img/boxed-bg.jpg', 'build/img');
-
-  // Bootbox
-  mix.scripts([
-    './node_modules/bootbox/bootbox.js',
-    './bootbox/bootbox-fix.js'
-  ], 'build/js/bootbox.js');
+    .copy('node_modules/admin-lte/dist/img/boxed-bg.jpg', 'build/img');
 
   // Bootstrap
   mix.less('./bootstrap/bootstrap.less');
