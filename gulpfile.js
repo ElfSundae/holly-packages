@@ -32,9 +32,10 @@ elixir(mix => {
   mix.scripts([
     './node_modules/bootbox/bootbox.js',
     './bootbox/bootbox-fix.js'
-  ], 'bootbox/bootbox.js');
+  ], getMinifyPath('bootbox/bootbox.js'));
 
 });
+return;
 
 /**
  * Examples for Laravel Elixir usage.
@@ -93,3 +94,13 @@ elixir(mix => {
     .copy('./node_modules/lightbox2/src/images', 'build/img/lightbox');
 
 });
+
+/**
+ * Append ".min" to file path in production.
+ *
+ * @param  {string} path
+ * @return {string}
+ */
+function getMinifyPath(path) {
+  return elixir.inProduction ? path.replace(/(\.[^\.]+)/, '.min$1') : path;
+}
