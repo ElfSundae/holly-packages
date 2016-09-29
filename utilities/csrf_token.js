@@ -1,5 +1,7 @@
 ;
 (function($) {
+  "use strict";
+
   /**
    * Add "X-CSRF-TOKEN" request header for Ajax, with value of meta named "csrf_token".
    *

@@ -8,7 +8,10 @@
  * Elf Sundae
  * 2015-06-08
  */
-;(function() {
+;
+(function($) {
+  "use strict";
+
   if (bootbox === undefined) {
     return;
   }
@@ -29,6 +32,7 @@
   }
 
   var oldDialog = bootbox.dialog;
+
   bootbox.dialog = function(opt) {
 
     function centerModal() {
@@ -61,4 +65,4 @@
     return dialog;
   };
 
-}());
+})(jQuery);

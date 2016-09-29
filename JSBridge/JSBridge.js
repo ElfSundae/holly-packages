@@ -6,6 +6,8 @@
  */
 ;
 (function() {
+  "use strict";
+
   if (typeof AppClient === "undefined" || !AppClient.isApiClient) {
     return;
   }
@@ -45,5 +47,4 @@
       JSBridgeReady(bridge);
     }
   });
-
-}());
+})();
