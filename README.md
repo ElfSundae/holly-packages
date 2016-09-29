@@ -19,6 +19,7 @@ npm install --save-dev holly-packages
 - [Bootstrap](#bootstrap)
 - [DataTables.net](#datatablesnet)
 - [FastClick](#fastclick)
+- [iCheck](#icheck)
 - [WebViewJavascriptBridge](#webviewjavascriptbridge)
 - [Lightbox2](#lightbox2)
 
@@ -56,6 +57,11 @@ npm install --save-dev holly-packages
 
 - Attached for `document.body` automatically on `DOMContentLoaded`.
 
+### iCheck
+
+- Moved images from skin's directory to `img/icheck/[skin]`.
+- Processed `@import` in `skins/all.css`.
+
 ### WebViewJavascriptBridge
 
 - Added alias `JSBridge` to `WebViewJavascriptBridge` object.
@@ -67,5 +73,5 @@ npm install --save-dev holly-packages
 
 ### Lightbox2
 
-- Replaced images location from `images` to `img/lightbox`.
+- Moved images from `images` to `img/lightbox`.
 
