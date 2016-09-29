@@ -3,7 +3,7 @@
  */
 ;
 (function($) {
-  $(document).ready(function() {
+  $(function() {
     $('div.wrapper > div.content-wrapper').show();
   });
 })(jQuery);
