@@ -1038,10 +1038,6 @@
 (function($) {
   "use strict";
 
-  if (bootbox === undefined) {
-    return;
-  }
-
   var lang = (window.navigator.userLanguage || window.navigator.language);
   if (lang !== undefined && lang.length >= 2) {
     if (/zh[\-_](CN|TW)/i.test === true || /bg[\-_]BG/i.test === true) {
