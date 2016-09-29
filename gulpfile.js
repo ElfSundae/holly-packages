@@ -92,7 +92,7 @@ elixir(mix => {
         "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js",
         "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
         "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
-        "./datatables.net/datatablesDefaults.js",
+        "./datatables.net/datatables-defaults.js",
       ],
       getMinifyPath('datatables.net/dist/js/dataTables-responsive-bs.js')
     );
@@ -149,8 +149,10 @@ elixir(mix => {
       './lightbox2/lightbox.css',
       getMinifyPath('lightbox2/dist/css/lightbox.css')
     )
-    .scripts(
-      './node_modules/lightbox2/src/js/lightbox.js',
+    .scripts([
+        './node_modules/lightbox2/src/js/lightbox.js',
+        './lightbox2/lightbox-defaults.js'
+      ],
       getMinifyPath('lightbox2/dist/js/lightbox.js')
     )
     .copy(
