@@ -1,11 +1,13 @@
 ;
 (function() {
+  "use strict";
+
   if (!window.AdminLTEOptions) {
     window.AdminLTEOptions = {
       animationSpeed: 150
     };
   }
-}());
+})();
 
 /*! AdminLTE app.js
  * ================
@@ -776,7 +778,9 @@ function _init() {
  */
 ;
 (function($) {
-  $(document).ready(function() {
+  "use strict";
+
+  $(function() {
     $('div.wrapper > div.content-wrapper').show();
   });
 })(jQuery);
