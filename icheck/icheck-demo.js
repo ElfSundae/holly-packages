@@ -1,18 +1,43 @@
-function launchICheck() {
-  $('.icheck > input, input.icheck').iCheck({
-    checkboxClass: 'icheckbox_square-blue',
-    radioClass: 'iradio_square-blue',
-    increaseArea: '20%'
-  });
-}
-
-
+;
 (function($) {
   "use strict";
 
-  $(function() {
-    launchICheck();
+  /**
+   * The default skin name.
+   */
+  if (!window.iCheckDefaultSkin) {
+    window.iCheckDefaultSkin = 'square-blue';
+  }
 
-    $('body').on('show.bs.modal', launchICheck);
+  /**
+   * The easier way to enable iCheck.
+   *
+   * @param  {string} skin
+   * @param  {Function} callback
+   */
+  $.fn.icheck = function(skin, callback) {
+    if (typeof skin === 'undefined') {
+      skin = window.iCheckDefaultSkin;
+    }
+
+    return $(this).iCheck({
+        checkboxClass: 'icheckbox_' + skin,
+        radioClass: 'iradio_' + skin,
+        increaseArea: '20%'
+      },
+      callback);
+  };
+
+  /**
+   * Enable iCheck for all inputs.
+   */
+  window.icheckInputs = function(skin, callback) {
+    $('.icheck > input, input.icheck').icheck(skin, callback);
+  };
+
+  $(function() {
+    icheckInputs();
+
+    $('body').on('show.bs.modal', icheckInputs);
   });
 })(jQuery);
