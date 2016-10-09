@@ -32,12 +32,14 @@
    * Enable iCheck for all inputs.
    */
   window.icheckInputs = function(skin, callback) {
-    $('.icheck > input, input.icheck').icheck(skin, callback);
+    $('.icheck input, input.icheck').icheck(skin, callback);
   };
 
   $(function() {
     icheckInputs();
 
-    $('body').on('show.bs.modal', icheckInputs);
+    $('body').on('show.bs.modal', function() {
+      icheckInputs();
+    });
   });
 })(jQuery);
