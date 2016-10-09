@@ -14,7 +14,7 @@
       "infoFiltered": "<span style='color:green'>(已从_MAX_条数据中筛选)</span>",
       "lengthMenu": "每页显示 _MENU_ 条数据",
       "loadingRecords": "Loading...",
-      "processing": '<div class="datatables-processing" style="color:#008d4c"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> 加载中...</div>',
+      "processing": '<div class="datatables-processing" style="color:#008d4c"><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> 加载中...</div>',
       "search": "<i class='fa fa-search'></i>",
       "zeroRecords": "<span style='color:red'>没有匹配的数据</span>",
       "paginate": {
