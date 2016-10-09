@@ -805,7 +805,7 @@ function _init() {
     if (false === show) {
       $(this).closest('.box').find('.overlay').remove();
     } else {
-      $(this).closest('.box').append('<div class="overlay"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
+      $(this).closest('.box').append('<div class="overlay"><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i></div>');
     }
 
     return this;
