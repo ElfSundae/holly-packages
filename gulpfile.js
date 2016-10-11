@@ -138,6 +138,11 @@ elixir(mix => {
       'icheck/js'
     );
 
+  mix.scripts([
+    './node_modules/html5shiv/dist/html5shiv.js',
+    './node_modules/respond.js/dest/respond.src.js'
+  ], getMinifyPath('utilities/ie-compatible.js'));
+
   // lightbox2
   mix.replace(
       'node_modules/lightbox2/src/css/lightbox.css',

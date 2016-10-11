@@ -36,6 +36,7 @@
     "fastclick": "^1.0.6",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
+    "html5shiv": "^3.7.3",
     "icheck": "^1.0.2",
     "jquery": "^1.12.4",
     "jquery-form": "^3.50.0",
@@ -43,6 +44,7 @@
     "laravel-elixir": "^6.0.0",
     "laravel-elixir-replace2": "^1.0.1",
     "lightbox2": "^2.8.2",
+    "respond.js": "^1.4.2",
     "spin.js": "^2.3.2"
   }
 }
