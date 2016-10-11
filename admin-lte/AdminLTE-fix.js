@@ -6,6 +6,6 @@
   "use strict";
 
   $(function() {
-    $('div.wrapper > div.content-wrapper').show();
+    $('.wrapper .content-wrapper').show();
   });
 })(jQuery);
