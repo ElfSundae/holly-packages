@@ -8,7 +8,7 @@
 (function() {
   "use strict";
 
-  if (typeof AppClient === "undefined" || !AppClient.isApiClient) {
+  if (typeof Client === "undefined" || ! Client.isApiClient) {
     return;
   }
 
