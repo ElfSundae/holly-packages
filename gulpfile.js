@@ -14,7 +14,7 @@ elixir.config.publicPath = 'build';
  *
  * You do not need to do this in your app, just use the result file in holly-packages directly.
  */
-elixir(mix => {
+elixir((mix) => {
 
   // AdminLTE
   mix.replace(
@@ -170,7 +170,7 @@ elixir(mix => {
 /**
  * Examples for Laravel Elixir usage.
  */
-elixir(mix => {
+elixir((mix) => {
 
   // Bootstrap
   mix.less('./bootstrap/bootstrap.less');
