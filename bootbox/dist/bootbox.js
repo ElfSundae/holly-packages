@@ -1,5 +1,5 @@
 /**
- * bootbox.js [master branch]
+ * bootbox.js [v4.4.0]
  *
  * http://bootboxjs.com/license.txt
  */
@@ -16,13 +16,7 @@
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
-
-    if (typeof $ === "undefined") {
-      module.exports = factory(require("jquery"));
-    } else {
-      module.exports = factory($); // jshint ignore:line
-    }
-
+    module.exports = factory(require("jquery"));
   } else {
     // Browser globals (root is window)
     root.bootbox = factory(root.jQuery);
@@ -35,7 +29,7 @@
   // the base DOM structure needed to create a modal
   var templates = {
     dialog:
-      "<div class='bootbox modal' tabindex='-1' role='dialog' aria-hidden='true'>" +
+      "<div class='bootbox modal' tabindex='-1' role='dialog'>" +
         "<div class='modal-dialog'>" +
           "<div class='modal-content'>" +
             "<div class='modal-body'><div class='bootbox-body'></div></div>" +
@@ -49,7 +43,7 @@
     footer:
       "<div class='modal-footer'></div>",
     closeButton:
-      "<button type='button' class='bootbox-close-button close' aria-hidden='true'>&times;</button>",
+      "<button type='button' class='bootbox-close-button close' data-dismiss='modal' aria-hidden='true'>&times;</button>",
     form:
       "<form class='bootbox-form'></form>",
     inputs: {
@@ -120,10 +114,7 @@
   }
 
   function getKeyLength(obj) {
-    if (Object.keys) {
-      return Object.keys(obj).length;
-    }
-
+    // @TODO defer to Object.keys(x).length if available?
     var k, t = 0;
     for (k in obj) {
       t ++;
@@ -138,11 +129,6 @@
     });
   }
 
-  /**
-   * Filter and tidy up any user supplied parameters to this dialog.
-   * Also looks for any shorthands used and ensures that the options
-   * which are returned are all normalized properly
-   */
   function sanitize(options) {
     var buttons;
     var total;
@@ -312,8 +298,6 @@
 
     options = mergeDialogOptions("alert", ["ok"], ["message", "callback"], arguments);
 
-    // @TODO: can this move inside exports.dialog when we're iterating over each
-    // button and checking its button.callback value instead?
     if (options.callback && !$.isFunction(options.callback)) {
       throw new Error("alert requires callback property to be a function when provided");
     }
@@ -593,8 +577,7 @@
     var buttons = options.buttons;
     var buttonStr = "";
     var callbacks = {
-      onEscape: options.onEscape,
-      onRendered: options.onRendered
+      onEscape: options.onEscape
     };
 
     if ($.fn.modal === undefined) {
@@ -640,7 +623,7 @@
       if (options.title) {
         dialog.find(".modal-header").prepend(closeButton);
       } else {
-        closeButton.css("margin-top", "-2px").prependTo(body);
+        closeButton.css("margin-top", "-10px").prependTo(body);
       }
     }
 
@@ -655,17 +638,12 @@
 
 
     /**
-     * Bootstrap event listeners; these handle extra
+     * Bootstrap event listeners; used handle extra
      * setup & teardown required after the underlying
      * modal has performed certain actions
      */
 
-    dialog.one("hide.bs.modal", function() {
-      dialog.off("escape.close.bb");
-      dialog.off("click");
-    });
-
-    dialog.one("hidden.bs.modal", function(e) {
+    dialog.on("hidden.bs.modal", function(e) {
       // ensure we don't accidentally intercept hidden events triggered
       // by children of the current dialog. We shouldn't anymore now BS
       // namespaces its events; but still worth doing
@@ -685,17 +663,7 @@
     });
     */
 
-    dialog.one("shown.bs.modal", function(e) {
-      if (callbacks.onRendered) {
-        // We do not want to send this callback through processCallback
-        // because by default processCallback wants to hide the dialog.
-        // This is mentioned because the method name is ambigous and
-        // might be better named processOnEscapeCallback. Its core
-        // functionality seems to have only been intended for closing the
-        // dialog after button clicks or close events.
-        callbacks.onRendered.call(dialog, e);
-      }
-
+    dialog.on("shown.bs.modal", function() {
       dialog.find(".btn-primary:first").focus();
     });
 
@@ -730,9 +698,6 @@
     }
 
     dialog.on("escape.close.bb", function(e) {
-      // the if statement looks redundant but it isn't; without it
-      // if we *didn't* have an onEscape handler then processCallback
-      // would automatically dismiss the dialog
       if (callbacks.onEscape) {
         processCallback(e, dialog, callbacks.onEscape);
       }
@@ -829,11 +794,6 @@
    * unlikely to be required. If this gets too large it can be split out into separate JS files.
    */
   var locales = {
-    ar : {
-      OK      : "موافق",
-      CANCEL  : "الغاء",
-      CONFIRM : "تأكيد"
-    },
     bg_BG : {
       OK      : "Ок",
       CANCEL  : "Отказ",
@@ -892,7 +852,7 @@
     fr : {
       OK      : "OK",
       CANCEL  : "Annuler",
-      CONFIRM : "Confirmer"
+      CONFIRM : "D'accord"
     },
     he : {
       OK      : "אישור",
