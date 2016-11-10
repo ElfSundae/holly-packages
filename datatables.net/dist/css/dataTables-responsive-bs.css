@@ -383,10 +383,12 @@ table.dataTable thead .sorting:after {
 
 table.dataTable thead .sorting_asc:after {
   content: "\f0de"; /* fa-sort-asc */
+  color: #08147D;
 }
 
 table.dataTable thead .sorting_desc:after {
   content: "\f0dd"; /* fa-sort-desc */
+  color: #08147D;
 }
 
 /*# sourceMappingURL=dataTables-responsive-bs.css.map */
