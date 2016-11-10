@@ -16778,15 +16778,14 @@ return DataTable.Responsive;
   "use strict";
 
   $.extend($.fn.dataTable.defaults, {
-    "responsive": true,
     "processing": true,
     "serverSide": true,
     "pagingType": "full_numbers",
     "language": {
       "emptyTable": "<span style='color:red'>无数据</span>",
-      "info": "共计: _TOTAL_ 当前:_START_-_END_",
+      "info": "共计：_TOTAL_ 当前：_START_-_END_",
       "infoEmpty": "",
-      "infoFiltered": "<span style='color:green'>(已从_MAX_条数据中筛选)</span>",
+      "infoFiltered": "<span style='color:green'>（已从 _MAX_ 条数据中筛选）</span>",
       "lengthMenu": "每页显示 _MENU_ 条数据",
       "loadingRecords": "Loading...",
       "processing": '<div class="datatables-processing" style="color:#008d4c"><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> 加载中...</div>',
@@ -16804,6 +16803,22 @@ return DataTable.Responsive;
       }
     },
   });
+})(jQuery);
+
+;
+(function($) {
+  "use strict";
+
+  /**
+   * Find the closest "tr" for this element.
+   */
+  $.fn.dataTableRow = function () {
+    var $row = $(this).closest('tr');
+    if ($row.hasClass('child')) {
+      $row = $row.prev('tr.parent');
+    }
+    return $row;
+  };
 })(jQuery);
 
 //# sourceMappingURL=dataTables-responsive-bs.js.map
