@@ -93,6 +93,7 @@ elixir((mix) => {
         "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
         "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
         "./datatables.net/datatables-defaults.js",
+        "./datatables.net/datatables-helper.js",
       ],
       getMinifyPath('datatables.net/dist/js/dataTables-responsive-bs.js')
     );
