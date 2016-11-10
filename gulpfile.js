@@ -83,7 +83,7 @@ elixir((mix) => {
   mix.styles([
         './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
         './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-        './datatables.net/datatables-fix.css'
+        './datatables.net/datatables-FontAwesome.css'
       ],
       getMinifyPath('datatables.net/dist/css/dataTables-responsive-bs.css')
     )
