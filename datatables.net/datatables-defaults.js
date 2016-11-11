@@ -8,12 +8,12 @@
     "pagingType": "full_numbers",
     "language": {
       "emptyTable": "<span style='color:red'>无数据</span>",
-      "info": "共计：_TOTAL_ 当前：_START_-_END_",
+      "info": "当前：_START_-_END_ ，共 _TOTAL_ 项",
       "infoEmpty": "",
-      "infoFiltered": "<span style='color:green'>（已从 _MAX_ 条数据中筛选）</span>",
-      "lengthMenu": "每页显示 _MENU_ 条数据",
-      "loadingRecords": "Loading...",
-      "processing": '<div class="datatables-processing" style="color:#008d4c"><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> 加载中...</div>',
+      "infoFiltered": "<span style='color:green'>（由 _MAX_ 项数据过滤）</span>",
+      "lengthMenu": "显示 _MENU_ 项数据",
+      "loadingRecords": "加载中...",
+      "processing": '<div class="datatables-processing" style="color:#008d4c"><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i></div>',
       "search": "<i class='fa fa-search'></i>",
       "zeroRecords": "<span style='color:red'>没有匹配的数据</span>",
       "paginate": {
@@ -23,8 +23,8 @@
         "previous": "<i class='fa fa-chevron-left'></i>"
       },
       "aria": {
-        "sortAscending": ": 顺序排序",
-        "sortDescending": ": 逆序排序"
+        "sortAscending": ": 顺序排列",
+        "sortDescending": ": 逆序排列"
       }
     },
   });
