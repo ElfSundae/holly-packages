@@ -17451,8 +17451,6 @@ return DataTable.Responsive;
   "use strict";
 
   $.extend($.fn.dataTable.defaults, {
-    "processing": true,
-    "serverSide": true,
     "pagingType": "full_numbers",
     "language": {
       "emptyTable": "<span style='color:red'>无数据</span>",
@@ -17484,6 +17482,9 @@ return DataTable.Responsive;
 
   /**
    * Find the closest "tr" for this element.
+   *
+   * If the Responsive extension is enabled, `$.fn.closest('tr')` may return
+   * the child view when there's one, this function fixes this issue.
    */
   $.fn.dataTableRow = function () {
     var $row = $(this).closest('tr');
