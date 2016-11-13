@@ -17,7 +17,7 @@ npm install --save-dev holly-packages
 - [AdminLTE](#adminlte)
 - [Bootbox](#bootbox)
 - [Bootstrap](#bootstrap)
-- [DataTables.net](#datatablesnet)
+- [DataTables](#datatables)
 - [FastClick](#fastclick)
 - [iCheck](#icheck)
 - [WebViewJavascriptBridge](#webviewjavascriptbridge)
@@ -40,19 +40,10 @@ npm install --save-dev holly-packages
 
 - Removed Glyphicons.
 
-### DataTables.net
+### DataTables
 
 - Replaced Glyphicons to Font-Awesome.
-- Applied default options: 
-  ```
-  "responsive": true,
-  "processing": true,
-  "serverSide": true,
-  "pagingType": "full_numbers",
-  "language": {
-    ...
-  }
-  ```
+- Applied default options.
 
 ### FastClick
 
@@ -75,4 +66,3 @@ npm install --save-dev holly-packages
 ### Lightbox2
 
 - Moved images from `images` to `img/lightbox`.
-
