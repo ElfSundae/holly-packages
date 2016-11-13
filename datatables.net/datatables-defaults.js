@@ -3,8 +3,6 @@
   "use strict";
 
   $.extend($.fn.dataTable.defaults, {
-    "processing": true,
-    "serverSide": true,
     "pagingType": "full_numbers",
     "language": {
       "emptyTable": "<span style='color:red'>无数据</span>",
