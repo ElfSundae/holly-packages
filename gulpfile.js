@@ -84,9 +84,9 @@ elixir((mix) => {
         './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
         './node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css',
         './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-        './datatables.net/datatables-FontAwesome.css'
+        './datatables/datatables-FontAwesome.css'
       ],
-      getMinifyPath('datatables.net/dist/css/dataTables-responsive-bs.css')
+      getMinifyPath('datatables/dist/css/dataTables-responsive-bs.css')
     )
     .scripts([
         "./node_modules/datatables.net/js/jquery.dataTables.js",
@@ -94,10 +94,10 @@ elixir((mix) => {
         './node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.js',
         "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
         "./node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js",
-        "./datatables.net/datatables-defaults.js",
-        "./datatables.net/datatables-helper.js",
+        "./datatables/datatables-defaults.js",
+        "./datatables/datatables-helper.js",
       ],
-      getMinifyPath('datatables.net/dist/js/dataTables-responsive-bs.js')
+      getMinifyPath('datatables/dist/js/dataTables-responsive-bs.js')
     );
 
   // FastClick
