@@ -47,6 +47,7 @@
     "laravel-elixir-replace2": "^1.0.1",
     "lightbox2": "^2.8.2",
     "respond.js": "^1.4.2",
-    "spin.js": "^2.3.2"
+    "spin.js": "^2.3.2",
+    "sprintf-js": "^1.0.3"
   }
 }
