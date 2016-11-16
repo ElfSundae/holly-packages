@@ -1,5 +1,5 @@
 ;
-(function() {
+(function(window) {
   "use strict";
 
   if (!window.AdminLTEOptions) {
@@ -7,7 +7,7 @@
       animationSpeed: 150
     };
   }
-})();
+})(window);
 
 /*! AdminLTE app.js
  * ================

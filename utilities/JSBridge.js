@@ -5,10 +5,10 @@
  * @see https://github.com/ElfSundae/AppComponents
  */
 ;
-(function() {
+(function(Client) {
   "use strict";
 
-  if (typeof Client === "undefined" || ! Client.isApiClient) {
+  if (!Client.isApiClient) {
     return;
   }
 
@@ -40,6 +40,7 @@
         data: data
       }, responseCallback);
     };
+
     window.JSBridge = bridge;
 
     // 可以在 JSBridgeReady 函数中初始化 JSBridge，例如设置事件监听
@@ -47,4 +48,4 @@
       JSBridgeReady(bridge);
     }
   });
-})();
+})(Client);

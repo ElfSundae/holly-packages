@@ -6,4 +6,4 @@
     allowOutsideClick: false,
     cancelButtonText: '取消'
   });
-})(swal)
+})(swal);
