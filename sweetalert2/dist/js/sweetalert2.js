@@ -1710,7 +1710,7 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
     allowOutsideClick: false,
     cancelButtonText: '取消'
   });
-})(swal)
+})(swal);
 
 ;
 (function(window, swal) {
@@ -1742,6 +1742,17 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
 
     return swal(options);
   };
-})(window, swal)
+})(window, swal);
+
+;
+(function(window) {
+  "use strict";
+
+  var originalSwal = window.Sweetalert2;
+
+  window.Sweetalert2 = window.sweetAlert = window.swal = function() {
+    return originalSwal.apply(null, arguments).catch(function() {});
+  };
+})(window);
 
 //# sourceMappingURL=sweetalert2.js.map
