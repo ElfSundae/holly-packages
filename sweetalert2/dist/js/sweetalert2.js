@@ -1710,10 +1710,10 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
     allowOutsideClick: false,
     cancelButtonText: '取消'
   });
-})(Sweetalert2)
+})(swal)
 
 ;
-(function(swal) {
+(function(window, swal) {
   "use strict";
 
   window.swalApi = function (json, options) {
@@ -1742,6 +1742,6 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
 
     return swal(options);
   };
-})(window, Sweetalert2)
+})(window, swal)
 
 //# sourceMappingURL=sweetalert2.js.map
