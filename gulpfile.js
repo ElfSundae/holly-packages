@@ -9,11 +9,6 @@ elixir.config.css.minifier.pluginOptions = {
 
 elixir.config.publicPath = 'build';
 
-/**
- * Custom third-party packages.
- *
- * You do not need to do this in your app, just use the result file in holly-packages directly.
- */
 elixir((mix) => {
 
   // AdminLTE
@@ -122,7 +117,7 @@ elixir((mix) => {
   ];
 
   icheckSkins.forEach(function(skin) {
-    mix = mix.replace(
+    mix.replace(
         'node_modules/icheck/skins/' + skin + '/*.css',
         /(url\()([^\.]+.png\))/gi,
         '$1../img/icheck/' + skin + '/$2',
@@ -148,11 +143,6 @@ elixir((mix) => {
       'node_modules/icheck/icheck.js',
       'icheck/js'
     );
-
-  mix.scripts([
-    './node_modules/html5shiv/dist/html5shiv.js',
-    './node_modules/respond.js/dest/respond.src.js'
-  ], getMinifyPath('utilities/ie-compatible.js'));
 
   // lightbox2
   mix.replace(
@@ -190,13 +180,18 @@ elixir((mix) => {
       getMinifyPath('sweetalert2/dist/js/sweetalert2.js')
     );
 
+  // Utilities: ie-compatible
+  mix.scripts([
+      './node_modules/html5shiv/dist/html5shiv.js',
+      './node_modules/respond.js/dest/respond.src.js'
+    ],
+    getMinifyPath('utilities/ie-compatible.js')
+  );
+
 });
 
 /**
  * Append ".min" to file path in production.
- *
- * @param  {string} path
- * @return {string}
  */
 function getMinifyPath(path) {
   return elixir.inProduction ? path.replace(/(\.[^\.]+$)/, '.min$1') : path;
