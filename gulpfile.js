@@ -57,6 +57,14 @@ elixir((mix) => {
     getMinifyPath('bootbox/dist/bootbox.js')
   );
 
+  // Bootnotify
+  mix.scripts([
+      './node_modules/bootnotify/bootnotify.js',
+      './bootnotify/bootnotifyApi.js'
+    ],
+    getMinifyPath('bootnotify/dist/bootnotify-api.js')
+  );
+
   // Bootstrap
   mix.replace(
       'node_modules/bootstrap/less/bootstrap.less',
