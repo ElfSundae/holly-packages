@@ -1,5 +1,5 @@
 ;
-(function(swal) {
+(function(window, swal) {
   "use strict";
 
   window.swalApi = function (json, options) {
@@ -28,4 +28,4 @@
 
     return swal(options);
   };
-})(window, Sweetalert2)
+})(window, swal)

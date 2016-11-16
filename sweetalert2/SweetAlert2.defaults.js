@@ -6,4 +6,4 @@
     allowOutsideClick: false,
     cancelButtonText: '取消'
   });
-})(Sweetalert2)
+})(swal)
