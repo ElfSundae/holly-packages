@@ -5,10 +5,6 @@
   "author": "Elf Sundae",
   "homepage": "https://github.com/ElfSundae/holly-packages",
   "license": "MIT",
-  "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ElfSundae/holly-packages.git"
@@ -48,7 +44,6 @@
     "lightbox2": "^2.9.0",
     "respond.js": "^1.4.2",
     "spin.js": "^2.3.2",
-    "sprintf-js": "^1.0.3",
-    "sweetalert": "^1.1.3"
+    "sprintf-js": "^1.0.3"
   }
 }
