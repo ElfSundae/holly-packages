@@ -44,6 +44,7 @@
     "lightbox2": "^2.9.0",
     "respond.js": "^1.4.2",
     "spin.js": "^2.3.2",
-    "sprintf-js": "^1.0.3"
+    "sprintf-js": "^1.0.3",
+    "sweetalert2": "^6.1.1"
   }
 }

@@ -176,6 +176,20 @@ elixir((mix) => {
       'lightbox2/dist/img/lightbox'
     );
 
+  // SweetAlert2
+  mix.styles(
+      './node_modules/sweetalert2/dist/sweetalert2.css',
+      getMinifyPath('sweetalert2/dist/css/sweetalert2.css')
+    )
+    .scripts([
+        './node_modules/es6-promise/dist/es6-promise.auto.js',
+        './node_modules/sweetalert2/dist/sweetalert2.js',
+        'sweetalert2/SweetAlert2.defaults.js',
+        'sweetalert2/swalApi.js'
+      ],
+      getMinifyPath('sweetalert2/dist/js/sweetalert2.js')
+    );
+
 });
 
 /**
