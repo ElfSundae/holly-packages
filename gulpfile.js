@@ -169,8 +169,8 @@ elixir((mix) => {
   // SweetAlert2
   mix.scripts([
       './node_modules/sweetalert2/dist/sweetalert2.js',
-      'sweetalert2/SweetAlert2.defaults.js',
-      'sweetalert2/swalApi.js'
+      './sweetalert2/SweetAlert2.defaults.js',
+      './sweetalert2/swalApi.js'
     ],
     getMinifyPath('sweetalert2/dist/js/sweetalert2.js')
   );
