@@ -28,4 +28,4 @@
 
     return swal(options);
   };
-})(window, Sweetalert2);
+})(window, Sweetalert2)
