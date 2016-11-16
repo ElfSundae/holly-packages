@@ -193,20 +193,6 @@ elixir((mix) => {
 });
 
 /**
- * Examples for Laravel Elixir usage.
- */
-elixir((mix) => {
-
-  // Bootstrap
-  mix.less('./bootstrap/bootstrap.less');
-
-  // Font-Awesome
-  mix.sass('./node_modules/font-awesome/scss/font-awesome.scss')
-    .copy('node_modules/font-awesome/fonts', 'build/fonts');
-
-});
-
-/**
  * Append ".min" to file path in production.
  *
  * @param  {string} path
