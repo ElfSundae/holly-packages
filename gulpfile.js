@@ -170,7 +170,8 @@ elixir((mix) => {
   mix.scripts([
       './node_modules/sweetalert2/dist/sweetalert2.js',
       './sweetalert2/SweetAlert2.defaults.js',
-      './sweetalert2/swalApi.js'
+      './sweetalert2/swalApi.js',
+      './sweetalert2/SweetAlert2-rejection-handler.js'
     ],
     getMinifyPath('sweetalert2/dist/js/sweetalert2.js')
   );
