@@ -9,7 +9,7 @@
  * 2015-06-08
  */
 ;
-(function($) {
+(function(window, $, bootbox) {
   "use strict";
 
   var lang = (window.navigator.userLanguage || window.navigator.language);
@@ -30,7 +30,6 @@
   var oldDialog = bootbox.dialog;
 
   bootbox.dialog = function(opt) {
-
     function centerModal() {
       $(this).css('display', 'block');
       var $dialog = $(this).find(".modal-dialog"),
@@ -60,5 +59,4 @@
 
     return dialog;
   };
-
-})(jQuery);
+})(window, jQuery, bootbox);
