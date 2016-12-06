@@ -18,6 +18,9 @@
   "bugs": {
     "url": "https://github.com/ElfSundae/holly-packages/issues"
   },
+  "scripts": {
+    "build": "gulp && gulp --production"
+  },
   "dependencies": {
     "admin-lte": "^2.3.6",
     "blueimp-md5": "^2.5.0",
