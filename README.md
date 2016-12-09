@@ -28,7 +28,7 @@ npm install --save-dev holly-packages
 ### AdminLTE
 
 - Removed Google Fonts.
-- ~~Fixed `main-footer` flash when dynamic change the page content's height on DOM loading. e.g. shows a datatables via Ajax on DOM ready.~~
+- Fixed `main-footer` flash when dynamic change the page content's height on DOM loading. e.g. shows a datatables via Ajax on DOM ready.
 - Added `$.fn.boxspin` function to spin any `.box` elements.
 
 ### Bootbox
