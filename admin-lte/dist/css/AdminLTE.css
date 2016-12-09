@@ -7319,6 +7319,17 @@ fieldset[disabled] .btn-yahoo.active {
   }
 }
 
+/**
+ * app.js中在页面加载时要计算 content-wrapper 的 min-height 属性, 如果页面是ajax请求后显示数据的，
+ * 会导致加载页面时 content-wrapper 下面的 main-footer "闪屏"。
+ *
+ * 修复方案: 在css中隐藏content-wrapper, 在document.ready时再显示,
+ *          给app.js时间计算和设置content-wrapper的min-height
+ */
+.wrapper .content-wrapper {
+  display: none;
+}
+
 body,
 h1,
 h2,
