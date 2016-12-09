@@ -26,7 +26,7 @@ elixir((mix) => {
     .less([
         './admin-lte/AdminLTE.less',
         './node_modules/admin-lte/build/less/skins/_all-skins.less',
-        // './admin-lte/AdminLTE-fix.less',
+        './admin-lte/AdminLTE-fix.less',
         './admin-lte/AdminLTE-custom.less'
       ],
       getMinifyPath('admin-lte/dist/css/AdminLTE.css')
@@ -34,7 +34,7 @@ elixir((mix) => {
     .scripts([
         './admin-lte/AdminLTEOptions.js',
         './node_modules/admin-lte/dist/js/app.js',
-        // './admin-lte/AdminLTE-fix.js',
+        './admin-lte/AdminLTE-fix.js',
         './admin-lte/AdminLTE-custom.js'
       ],
       getMinifyPath('admin-lte/dist/js/AdminLTE.js')
