@@ -1,6 +1,6 @@
 {
   "name": "holly-packages",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Packages for Holly app.",
   "author": "Elf Sundae",
   "homepage": "https://github.com/ElfSundae/holly-packages",
@@ -50,6 +50,6 @@
     "respond.js": "^1.4.2",
     "spin.js": "^2.3.2",
     "sprintf-js": "^1.1.1",
-    "sweetalert2": "^6.6.4"
+    "sweetalert2": "^6.6.5"
   }
 }
