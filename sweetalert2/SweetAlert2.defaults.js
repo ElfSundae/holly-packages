@@ -3,7 +3,7 @@
   "use strict";
 
   swal.setDefaults({
-    allowOutsideClick: false,
+    // allowOutsideClick: false,
     cancelButtonText: '取消'
   });
 })(swal);

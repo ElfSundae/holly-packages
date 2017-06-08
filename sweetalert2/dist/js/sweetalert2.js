@@ -1647,7 +1647,7 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
   "use strict";
 
   swal.setDefaults({
-    allowOutsideClick: false,
+    // allowOutsideClick: false,
     cancelButtonText: '取消'
   });
 })(swal);
