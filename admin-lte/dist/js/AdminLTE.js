@@ -783,18 +783,6 @@ function _init() {
 }(jQuery));
 
 /**
- * @see AdminLTE-fixed.less
- */
-;
-(function($) {
-  "use strict";
-
-  $(function() {
-    $('.wrapper .content-wrapper').show();
-  });
-})(jQuery);
-
-/**
  * 为 AdminLTE 里的 .box 添加 .overlay spinner
  */
 ;
