@@ -26,6 +26,6 @@
       options.type = type;
     }
 
-    return swal(options);
+    return swal(options).catch(swal.noop);
   };
 })(window, swal);
