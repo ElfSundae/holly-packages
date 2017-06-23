@@ -57,7 +57,7 @@ npm install --save-dev holly-packages
 ### WebViewJavascriptBridge
 
 - Added alias `JSBridge` to `WebViewJavascriptBridge` object.
-- Setup JSBridge when `Client.isApiClient` is `true`.
+- Setup JSBridge when `AgentClient.isAppClient` is `true`.
 - Added alias `on` to `JSBridge.registerHandler` method.
 - Added `send` method to call the default handler named `"default"`.
 - Added `api` method to send `{ action: "", data: ... }`.

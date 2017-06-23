@@ -5,10 +5,10 @@
  * @see https://github.com/ElfSundae/AppComponents
  */
 ;
-(function(Client) {
+(function(window) {
   "use strict";
 
-  if (!Client.isApiClient) {
+  if (!window.AgentClient || !window.AgentClient.isAppClient) {
     return;
   }
 
@@ -38,4 +38,4 @@
       JSBridgeReady(bridge);
     }
   });
-})(Client);
+})(window);
