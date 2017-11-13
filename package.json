@@ -20,6 +20,8 @@
   },
   "scripts": {
     "build": "gulp && gulp --production"
+    "build": "gulp && gulp --production",
+    "update": "npm update --save --dev"
   },
   "dependencies": {
     "admin-lte": "^2.3.11",
