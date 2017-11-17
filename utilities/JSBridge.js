@@ -4,7 +4,6 @@
  * @see https://github.com/marcuswestin/WebViewJavascriptBridge
  * @see https://github.com/ElfSundae/AppComponents
  */
-;
 (function(window) {
   "use strict";
 

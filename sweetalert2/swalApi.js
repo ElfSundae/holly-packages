@@ -1,4 +1,3 @@
-;
 (function(window, swal) {
   "use strict";
 
