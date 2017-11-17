@@ -24,7 +24,7 @@ elixir((mix) => {
         './node_modules/admin-lte/dist/js/adminlte.js',
         './admin-lte/AdminLTE-custom.js'
       ],
-      getMinifyPath('admin-lte/dist/js/adminlte.js')
+      getMinifyPath('admin-lte/dist/js/AdminLTE.js')
     )
     .copy(
       'node_modules/admin-lte/dist/img/boxed-bg.jpg',

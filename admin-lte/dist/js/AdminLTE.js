@@ -1164,4 +1164,4 @@ throw new Error('AdminLTE requires jQuery')
   }
 })(jQuery);
 
-//# sourceMappingURL=adminlte.js.map
+//# sourceMappingURL=AdminLTE.js.map
