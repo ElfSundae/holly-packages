@@ -32,10 +32,10 @@ elixir((mix) => {
     )
     .scripts([
         './admin-lte/AdminLTEOptions.js',
-        './node_modules/admin-lte/dist/js/app.js',
+        './node_modules/admin-lte/dist/js/adminlte.js',
         './admin-lte/AdminLTE-custom.js'
       ],
-      getMinifyPath('admin-lte/dist/js/AdminLTE.js')
+      getMinifyPath('admin-lte/dist/js/adminlte.js')
     )
     .copy(
       'node_modules/admin-lte/dist/img/boxed-bg.jpg',
