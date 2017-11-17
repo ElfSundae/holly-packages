@@ -1,7 +1,6 @@
 /**
  * Requirement: captcha.js
  */
-;
 (function($) {
   "use strict";
 

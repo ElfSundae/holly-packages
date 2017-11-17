@@ -1,7 +1,6 @@
 /**
  * 为 AdminLTE 里的 .box 添加 .overlay spinner
  */
-;
 (function($) {
   "use strict";
 

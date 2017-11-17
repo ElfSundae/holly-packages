@@ -1,7 +1,3 @@
-/**
- * @see AdminLTE-fixed.less
- */
-;
 (function($) {
   "use strict";
 
