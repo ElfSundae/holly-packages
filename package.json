@@ -22,7 +22,7 @@
     "build": "gulp && gulp --production"
   },
   "dependencies": {
-    "admin-lte": "^2.4.2",
+    "admin-lte": "github:almasaeed2010/AdminLTE",
     "blueimp-md5": "^2.10.0",
     "bootbox": "^4.4.0",
     "bootnotify": "^1.0.6",
