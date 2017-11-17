@@ -12,21 +12,10 @@ elixir.config.publicPath = 'build';
 elixir((mix) => {
 
   // AdminLTE
-  mix.replace(
-      'node_modules/admin-lte/build/less/AdminLTE.less',
-      /(@import[^";]*")([^";]+.*)/gi,
-      '$1node_modules/admin-lte/build/less/$2',
-      'admin-lte'
-    )
-    .replace(
-      'admin-lte/AdminLTE.less',
-      /(.+url\(http.+)/gi,
-      '// $1'
-    )
-    .less([
-        './admin-lte/AdminLTE.less',
-        './node_modules/admin-lte/build/less/skins/_all-skins.less',
-        './admin-lte/AdminLTE-custom.less'
+  mix.styles([
+        './node_modules/admin-lte/dist/css/AdminLTE.css',
+        './node_modules/admin-lte/dist/css/skins/_all-skins.css',
+        './admin-lte/AdminLTE-custom.css'
       ],
       getMinifyPath('admin-lte/dist/css/AdminLTE.css')
     )
