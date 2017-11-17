@@ -994,7 +994,6 @@
  * Elf Sundae
  * 2015-06-08
  */
-;
 (function(window, $, bootbox) {
   "use strict";
 

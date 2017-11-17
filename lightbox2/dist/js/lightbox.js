@@ -510,7 +510,6 @@
   return new Lightbox();
 }));
 
-;
 (function($) {
   lightbox.option({
     albumLabel: '%1/%2',

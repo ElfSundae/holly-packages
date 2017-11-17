@@ -17539,7 +17539,6 @@ _display.modal = function ( options ) {
 return DataTable.Responsive;
 }));
 
-;
 (function($) {
   "use strict";
 
@@ -17569,7 +17568,6 @@ return DataTable.Responsive;
   });
 })(jQuery);
 
-;
 (function($) {
   "use strict";
 

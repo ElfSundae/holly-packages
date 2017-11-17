@@ -1,4 +1,3 @@
-;
 (function(window) {
   "use strict";
 
@@ -1142,7 +1141,6 @@ throw new Error('AdminLTE requires jQuery')
 /**
  * 为 AdminLTE 里的 .box 添加 .overlay spinner
  */
-;
 (function($) {
   "use strict";
 

@@ -845,7 +845,6 @@
  *
  * @see https://github.com/ftlabs/fastclick#usage
  */
-;
 (function() {
   "use strict";
 

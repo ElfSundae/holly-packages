@@ -1812,7 +1812,6 @@ return sweetAlert;
 })));
 if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
 
-;
 (function(swal) {
   "use strict";
 
@@ -1822,7 +1821,6 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
   });
 })(swal);
 
-;
 (function(window, swal) {
   "use strict";
 

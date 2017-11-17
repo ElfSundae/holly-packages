@@ -109,7 +109,7 @@
  * Usage:
  * $(...).bootnotifyApi({code: 1, msg: 'message'}, {position: 'top'})
  */
-;(function($) {
+(function($) {
   "use strict";
 
   $.fn.bootnotifyApi = function(json, options) {
