@@ -1,4 +1,6 @@
 const elixir = require('laravel-elixir');
+const gulp = require('gulp');
+const del = require('del');
 
 require('laravel-elixir-replace2');
 
@@ -170,6 +172,12 @@ elixir((mix) => {
     getMinifyPath('utilities/ie-compatible.js')
   );
 
+});
+
+gulp.task('clean', function() {
+  return del([
+      './*/dist'
+      ]);
 });
 
 /**
