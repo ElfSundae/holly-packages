@@ -19,7 +19,7 @@ elixir((mix) => {
             './node_modules/admin-lte/dist/css/skins/_all-skins.css',
             './admin-lte/AdminLTE-custom.css'
         ],
-        getMinifyPath('admin-lte/dist/css/AdminLTE.css')
+        destPath('admin-lte/dist/css/AdminLTE.css')
     )
     .scripts(
         [
@@ -27,7 +27,7 @@ elixir((mix) => {
             './node_modules/admin-lte/dist/js/adminlte.js',
             './admin-lte/AdminLTE-custom.js'
         ],
-        getMinifyPath('admin-lte/dist/js/AdminLTE.js')
+        destPath('admin-lte/dist/js/AdminLTE.js')
     )
     .copy(
         'node_modules/admin-lte/dist/img/boxed-bg.jpg',
@@ -40,7 +40,7 @@ elixir((mix) => {
             './node_modules/bootbox/bootbox.js',
             './bootbox/bootbox-fix.js'
         ],
-        getMinifyPath('bootbox/dist/bootbox.js')
+        destPath('bootbox/dist/bootbox.js')
     );
 
     // Bootnotify
@@ -49,7 +49,7 @@ elixir((mix) => {
             './node_modules/bootnotify/bootnotify.js',
             './bootnotify/bootnotifyApi.js'
         ],
-        getMinifyPath('bootnotify/dist/bootnotify-api.js')
+        destPath('bootnotify/dist/bootnotify-api.js')
     );
 
     // Bootstrap
@@ -83,7 +83,7 @@ elixir((mix) => {
             './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
             './datatables/datatables-FontAwesome.css'
         ],
-        getMinifyPath('datatables/dist/css/dataTables-responsive-bs.css')
+        destPath('datatables/dist/css/dataTables-responsive-bs.css')
     )
     .scripts(
         [
@@ -95,7 +95,7 @@ elixir((mix) => {
             './datatables/datatables-defaults.js',
             './datatables/datatables-helper.js',
         ],
-        getMinifyPath('datatables/dist/js/dataTables-responsive-bs.js')
+        destPath('datatables/dist/js/dataTables-responsive-bs.js')
     );
 
     // FastClick
@@ -104,7 +104,7 @@ elixir((mix) => {
             './node_modules/fastclick/lib/fastclick.js',
             './fastclick/attach.js'
         ],
-        getMinifyPath('fastclick/dist/fastclick.js')
+        destPath('fastclick/dist/fastclick.js')
     );
 
     // iCheck
@@ -134,7 +134,7 @@ elixir((mix) => {
             './icheck/css/skins/polaris/polaris.css',
             './icheck/css/skins/square/_all.css'
         ],
-        getMinifyPath('icheck/css/skins/all.css')
+        destPath('icheck/css/skins/all.css')
     )
     .copy(
         'node_modules/icheck/icheck.js',
@@ -150,14 +150,14 @@ elixir((mix) => {
     )
     .styles(
         './lightbox2/lightbox.css',
-        getMinifyPath('lightbox2/dist/css/lightbox.css')
+        destPath('lightbox2/dist/css/lightbox.css')
     )
     .scripts(
         [
             './node_modules/lightbox2/src/js/lightbox.js',
             './lightbox2/lightbox-defaults.js'
         ],
-        getMinifyPath('lightbox2/dist/js/lightbox.js')
+        destPath('lightbox2/dist/js/lightbox.js')
     )
     .copy(
         'node_modules/lightbox2/dist/images',
@@ -171,7 +171,7 @@ elixir((mix) => {
             './sweetalert2/SweetAlert2.defaults.js',
             './sweetalert2/swalApi.js'
         ],
-        getMinifyPath('sweetalert2/dist/js/sweetalert2.js')
+        destPath('sweetalert2/dist/js/sweetalert2.js')
     );
 
     // Utilities: ie-compatible
@@ -180,7 +180,7 @@ elixir((mix) => {
             './node_modules/html5shiv/dist/html5shiv.js',
             './node_modules/respond.js/dest/respond.src.js'
         ],
-        getMinifyPath('utilities/ie-compatible.js')
+        destPath('utilities/ie-compatible.js')
     );
 
 });
@@ -194,6 +194,6 @@ gulp.task('clean', function() {
 /**
  * Append ".min" to file path in production.
  */
-function getMinifyPath(path) {
+function destPath(path) {
     return elixir.inProduction ? path.replace(/(\.[^\.]+$)/, '.min$1') : path;
 }
