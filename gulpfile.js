@@ -132,12 +132,12 @@ elixir((mix) => {
         mix.replace(
             file,
             /(url\()(.+\.png\))/g,
-            '$1../img/icheck/' + skin + '/$2',
+            '$1../../img/icheck/' + skin + '/$2',
             'tmp/icheck/css/' + filename
         )
         .styles(
             './tmp/icheck/css/' + filename,
-            destPath('icheck/dist/css/' + filename)
+            destPath('icheck/dist/css/icheck/' + filename)
         )
         .copy(
             'node_modules/icheck/skins/' + skin + '/*.png',
@@ -154,7 +154,7 @@ elixir((mix) => {
             './tmp/icheck/css/polaris-polaris.css',
             './tmp/icheck/css/square-all.css'
         ],
-        destPath('icheck/dist/css/all-skins.css')
+        destPath('icheck/dist/css/icheck/all-skins.css')
     )
     .scripts(
         './node_modules/icheck/icheck.js',
