@@ -162,26 +162,26 @@ elixir((mix) => {
     );
 
     // lightbox2
-    mix.replace(
-        'node_modules/lightbox2/src/css/lightbox.css',
-        '../images/',
-        '../img/lightbox/',
-        'lightbox2'
-    )
-    .styles(
-        './lightbox2/lightbox.css',
-        destPath('lightbox2/dist/css/lightbox.css')
-    )
-    .scripts(
+    mix.scripts(
         [
             './node_modules/lightbox2/src/js/lightbox.js',
             './lightbox2/lightbox-defaults.js'
         ],
-        destPath('lightbox2/dist/js/lightbox.js')
+        destPath('lightbox2/dist/js/lightbox2.js')
+    )
+    .replace(
+        'node_modules/lightbox2/src/css/lightbox.css',
+        '../images/',
+        '../img/lightbox2/',
+        'tmp/lightbox2.css'
+    )
+    .styles(
+        './tmp/lightbox2.css',
+        destPath('lightbox2/dist/css/lightbox2.css')
     )
     .copy(
         'node_modules/lightbox2/dist/images',
-        'lightbox2/dist/img/lightbox'
+        'lightbox2/dist/img/lightbox2'
     );
 
     // SweetAlert2
