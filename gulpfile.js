@@ -1,6 +1,8 @@
 const elixir = require('laravel-elixir');
 const gulp = require('gulp');
 const del = require('del');
+const glob = require('glob');
+const path = require('path');
 require('laravel-elixir-replace2');
 
 elixir.config.css.minifier.pluginOptions = {
@@ -114,37 +116,41 @@ elixir((mix) => {
     );
 
     // iCheck
-    var icheckSkins = [
-        'flat', 'futurico', 'line', 'minimal', 'polaris', 'square'
-    ];
+    glob.sync('node_modules/icheck/skins/*/*.css').forEach(function (file) {
+        var skinPath = file.replace('node_modules/icheck/skins/', ''); // "flat/_all.css"
+        var skin = path.dirname(skinPath); // "flat"
+        var filename = skinPath.replace('_', '').replace(path.sep, '-'); // "flat-all.css"
 
-    icheckSkins.forEach(function(skin) {
         mix.replace(
-            'node_modules/icheck/skins/' + skin + '/*.css',
-            /(url\()(.+\.png\))/gi,
+            file,
+            /(url\()(.+\.png\))/g,
             '$1../img/icheck/' + skin + '/$2',
-            'icheck/css/skins/' + skin
+            'tmp/icheck/css/' + filename
+        )
+        .styles(
+            './tmp/icheck/css/' + filename,
+            destPath('icheck/dist/css/' + filename)
         )
         .copy(
             'node_modules/icheck/skins/' + skin + '/*.png',
-            'icheck/img/icheck/' + skin
+            'icheck/dist/img/icheck/' + skin
         );
     });
 
     mix.styles(
         [
-            './icheck/css/skins/flat/_all.css',
-            './icheck/css/skins/futurico/futurico.css',
-            './icheck/css/skins/line/_all.css',
-            './icheck/css/skins/minimal/_all.css',
-            './icheck/css/skins/polaris/polaris.css',
-            './icheck/css/skins/square/_all.css'
+            './tmp/icheck/css/flat-all.css',
+            './tmp/icheck/css/futurico-futurico.css',
+            './tmp/icheck/css/line-all.css',
+            './tmp/icheck/css/minimal-all.css',
+            './tmp/icheck/css/polaris-polaris.css',
+            './tmp/icheck/css/square-all.css'
         ],
-        destPath('icheck/css/skins/all.css')
+        destPath('icheck/dist/css/all-skins.css')
     )
-    .copy(
-        'node_modules/icheck/icheck.js',
-        'icheck/js'
+    .scripts(
+        './node_modules/icheck/icheck.js',
+        destPath('icheck/dist/js')
     );
 
     // lightbox2
