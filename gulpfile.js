@@ -184,6 +184,15 @@ elixir((mix) => {
         'lightbox2/dist/img/lightbox2'
     );
 
+    // Polyfill
+    mix.scripts(
+        [
+            './node_modules/html5shiv/dist/html5shiv.js',
+            './node_modules/respond.js/dest/respond.src.js'
+        ],
+        destPath('polyfill/dist/ie-html5shiv-respond.js')
+    );
+
     // SweetAlert2
     mix.scripts(
         [
@@ -192,15 +201,6 @@ elixir((mix) => {
             './sweetalert2/swalApi.js'
         ],
         destPath('sweetalert2/dist/js/sweetalert2.js')
-    );
-
-    // Polyfill
-    mix.scripts(
-        [
-            './node_modules/html5shiv/dist/html5shiv.js',
-            './node_modules/respond.js/dest/respond.src.js'
-        ],
-        destPath('polyfill/dist/ie-html5shiv-respond.js')
     );
 
 });
