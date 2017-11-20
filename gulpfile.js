@@ -13,15 +13,7 @@ elixir.config.publicPath = 'build';
 elixir((mix) => {
 
     // AdminLTE
-    mix.styles(
-        [
-            './node_modules/admin-lte/dist/css/AdminLTE.css',
-            './node_modules/admin-lte/dist/css/skins/_all-skins.css',
-            './admin-lte/AdminLTE-custom.css'
-        ],
-        destPath('admin-lte/dist/css/AdminLTE.css')
-    )
-    .scripts(
+    mix.scripts(
         [
             './admin-lte/AdminLTEOptions.js',
             './node_modules/admin-lte/dist/js/adminlte.js',
@@ -29,9 +21,23 @@ elixir((mix) => {
         ],
         destPath('admin-lte/dist/js/AdminLTE.js')
     )
+    .replace(
+        'node_modules/admin-lte/dist/css/AdminLTE.css',
+        "url('../img/",
+        "url('../img/admin-lte/",
+        'tmp/AdminLTE.css'
+    )
+    .styles(
+        [
+            './tmp/AdminLTE.css',
+            './node_modules/admin-lte/dist/css/skins/_all-skins.css',
+            './admin-lte/AdminLTE-custom.css'
+        ],
+        destPath('admin-lte/dist/css/AdminLTE.css')
+    )
     .copy(
         'node_modules/admin-lte/dist/img/boxed-bg.jpg',
-        'admin-lte/dist/img'
+        'admin-lte/dist/img/admin-lte'
     );
 
     // Bootbox
@@ -187,6 +193,7 @@ elixir((mix) => {
 
 gulp.task('clean', function() {
     return del([
+        './tmp',
         './*/dist'
     ]);
 });
