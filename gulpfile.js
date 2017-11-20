@@ -81,6 +81,14 @@ elixir((mix) => {
         /(.+glyphicons.+)/gi,
         '// $1',
         'bootstrap'
+    )
+    .less(
+        './bootstrap/bootstrap.less',
+        destPath('bootstrap/dist/css/bootstrap.css')
+    )
+    .scripts(
+        './node_modules/bootstrap/dist/js/bootstrap.js',
+        destPath('bootstrap/dist/js/bootstrap.js')
     );
 
     // dataTables
