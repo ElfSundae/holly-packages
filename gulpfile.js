@@ -121,7 +121,7 @@ elixir((mix) => {
     icheckSkins.forEach(function(skin) {
         mix.replace(
             'node_modules/icheck/skins/' + skin + '/*.css',
-            /(url\()([^\.]+.png\))/gi,
+            /(url\()(.+\.png\))/gi,
             '$1../img/icheck/' + skin + '/$2',
             'icheck/css/skins/' + skin
         )
