@@ -194,13 +194,13 @@ elixir((mix) => {
         destPath('sweetalert2/dist/js/sweetalert2.js')
     );
 
-    // Utilities: ie-compatible
+    // Polyfill
     mix.scripts(
         [
             './node_modules/html5shiv/dist/html5shiv.js',
             './node_modules/respond.js/dest/respond.src.js'
         ],
-        destPath('utilities/ie-compatible.js')
+        destPath('polyfill/dist/ie-html5shiv-respond.js')
     );
 
 });
