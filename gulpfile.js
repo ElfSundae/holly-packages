@@ -82,16 +82,7 @@ elixir((mix) => {
     );
 
     // dataTables
-    mix.styles(
-        [
-            './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
-            './node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css',
-            './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-            './datatables/datatables-FontAwesome.css'
-        ],
-        destPath('datatables/dist/css/dataTables-responsive-bs.css')
-    )
-    .scripts(
+    mix.scripts(
         [
             './node_modules/datatables.net/js/jquery.dataTables.js',
             './node_modules/datatables.net-bs/js/dataTables.bootstrap.js',
@@ -102,6 +93,15 @@ elixir((mix) => {
             './datatables/datatables-helper.js',
         ],
         destPath('datatables/dist/js/dataTables-responsive-bs.js')
+    )
+    .styles(
+        [
+            './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
+            './node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css',
+            './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
+            './datatables/datatables-FontAwesome.css'
+        ],
+        destPath('datatables/dist/css/dataTables-responsive-bs.css')
     );
 
     // FastClick
