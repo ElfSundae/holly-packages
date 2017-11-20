@@ -19,7 +19,7 @@
     "url": "https://github.com/ElfSundae/holly-packages/issues"
   },
   "scripts": {
-    "build": "gulp && gulp --production"
+    "build": "gulp clean && gulp && gulp --production"
   },
   "dependencies": {
     "admin-lte": "github:almasaeed2010/AdminLTE",
