@@ -20,7 +20,7 @@
       return this;
     }
 
-    $(this).find('img.captcha').attr('src', CAPTCHA_URL + '?' + Math.random().toString(36).substring(7));
+    $(this).find('img.captcha').attr('src', CAPTCHA_URL + '?' + Math.random());
 
     if (input === undefined) {
       input = $('input.captcha');
