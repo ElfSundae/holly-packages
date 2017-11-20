@@ -158,7 +158,7 @@ elixir((mix) => {
     )
     .scripts(
         './node_modules/icheck/icheck.js',
-        destPath('icheck/dist/js')
+        destPath('icheck/dist/js/icheck.js')
     );
 
     // lightbox2
