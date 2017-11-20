@@ -61,14 +61,14 @@ elixir((mix) => {
     // Bootstrap
     mix.replace(
         'node_modules/bootstrap/less/bootstrap.less',
-        /(@import[^";]*")([^";]+.*)/gi,
-        '$1node_modules/bootstrap/less/$2',
+        '@import "',
+        '@import "node_modules/bootstrap/less/',
         'bootstrap'
     )
     .replace(
         'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss',
-        /(@import[^";]*")([^";]+.*)/gi,
-        '$1node_modules/bootstrap-sass/assets/stylesheets/$2',
+        '@import "',
+        '@import "node_modules/bootstrap-sass/assets/stylesheets/',
         'bootstrap'
     )
     .replace(
