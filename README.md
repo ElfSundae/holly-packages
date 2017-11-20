@@ -19,9 +19,7 @@ All changes to third-party packages are documented below:
 - [Bootstrap](#bootstrap)
 - [DataTables](#datatables)
 - [FastClick](#fastclick)
-- [iCheck](#icheck)
 - [WebViewJavascriptBridge](#webviewjavascriptbridge)
-- [Lightbox2](#lightbox2)
 
 <!-- /MarkdownTOC -->
 
@@ -49,11 +47,6 @@ All changes to third-party packages are documented below:
 
 - Attached for `document.body` automatically on `DOMContentLoaded`.
 
-### iCheck
-
-- Moved images from skin's directory to `img/icheck/[skin]`.
-- Processed `@import` in `skins/all.css`.
-
 ### WebViewJavascriptBridge
 
 - Added alias `JSBridge` to `WebViewJavascriptBridge` object.
@@ -62,7 +55,3 @@ All changes to third-party packages are documented below:
 - Added `send` method to call the default handler named `"default"`.
 - Added `api` method to send `{ action: "", data: ... }`.
 - Invoke `JSBridgeReady(bridge)` function when JSBridge is ready.
-
-### Lightbox2
-
-- Moved images from `images` to `img/lightbox`.
