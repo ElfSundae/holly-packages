@@ -82,8 +82,8 @@ elixir((mix) => {
         '// $1',
         'bootstrap'
     )
-    .less(
-        './bootstrap/bootstrap.less',
+    .sass(
+        './bootstrap/bootstrap-custom.scss',
         destPath('bootstrap/dist/css/bootstrap.css')
     )
     .scripts(
