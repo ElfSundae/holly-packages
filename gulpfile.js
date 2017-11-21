@@ -123,6 +123,19 @@ elixir((mix) => {
         destPath('fastclick/dist/fastclick.js')
     );
 
+    // Highlight.js
+    mix.copy('highlight/highlight.pack.js', 'highlight/dist/js');
+
+    [
+        'atom-one-dark', 'atom-one-light',
+        'github', 'github-gist',
+        'tomorrow','tomorrow-night',
+        'ocean', 'solarized-dark'
+    ].forEach(function (name) {
+        var filename = 'highlight/styles/' + name + '.css';
+        mix.styles('./' + filename, destPath('highlight/dist/css/'+filename));
+    });
+
     // iCheck
     glob.sync('node_modules/icheck/skins/*/*.css').forEach(function (file) {
         var skinPath = file.replace('node_modules/icheck/skins/', ''); // "flat/_all.css"
