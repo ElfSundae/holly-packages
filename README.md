@@ -4,7 +4,7 @@ Packages for Holly app.
 
 ## Installation
 
-```
+```sh
 npm install holly-packages --save-dev
 ```
 
