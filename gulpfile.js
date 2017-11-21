@@ -123,6 +123,16 @@ elixir((mix) => {
         destPath('fastclick/dist/fastclick.js')
     );
 
+    // Font-Awesome
+    mix.styles(
+        './node_modules/font-awesome/css/font-awesome.css',
+        destPath('font-awesome/dist/css/font-awesome.css')
+    )
+    .copy(
+        'node_modules/font-awesome/fonts',
+        'font-awesome/dist/fonts'
+    );
+
     // GitHub Markdown
     mix.styles(
         './node_modules/github-markdown-css/github-markdown.css',
