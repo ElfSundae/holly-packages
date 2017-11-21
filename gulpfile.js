@@ -201,6 +201,10 @@ elixir((mix) => {
             './sweetalert2/swalApi.js'
         ],
         destPath('sweetalert2/dist/js/sweetalert2.js')
+    )
+    .styles(
+        './node_modules/sweetalert2/dist/sweetalert2.css',
+        destPath('sweetalert2/dist/css/sweetalert2.css')
     );
 
 });
