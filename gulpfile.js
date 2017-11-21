@@ -123,6 +123,19 @@ elixir((mix) => {
         destPath('fastclick/dist/fastclick.js')
     );
 
+    // GitHub Markdown
+    mix.styles(
+        './node_modules/github-markdown-css/github-markdown.css',
+        destPath('github-markdown-css/dist/github-markdown.css')
+    )
+    .styles(
+        [
+            './node_modules/github-markdown-css/github-markdown.css',
+            './github-markdown-css/container.css'
+        ],
+        destPath('github-markdown-css/dist/github-markdown-container.css')
+    );
+
     // Highlight.js
     mix.copy('highlight/highlight.pack.js', 'highlight/dist/js');
 
