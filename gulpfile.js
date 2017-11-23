@@ -10,8 +10,6 @@ elixir.config.css.minifier.pluginOptions = {
     keepSpecialComments: 0
 };
 
-elixir.config.publicPath = 'build';
-
 elixir((mix) => {
 
     // AdminLTE
