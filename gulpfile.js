@@ -153,8 +153,10 @@ elixir((mix) => {
         'tomorrow','tomorrow-night',
         'ocean', 'solarized-dark'
     ].forEach(function (name) {
-        var filename = 'highlight/styles/' + name + '.css';
-        mix.styles('./' + filename, destPath('highlight/dist/css/'+filename));
+        mix.styles(
+            './highlight/styles/' + name + '.css',
+            destPath('highlight/dist/css/highlight-' + name + '.css')
+        );
     });
 
     // iCheck
