@@ -5,11 +5,11 @@ const glob = require('glob');
 const path = require('path');
 require('laravel-elixir-replace2');
 
+elixir.config.notifications = false;
 elixir.config.css.minifier.pluginOptions = {
     compatibility: 'ie7',
     keepSpecialComments: 0
 };
-elixir.config.notifications = false;
 
 elixir((mix) => {
 
