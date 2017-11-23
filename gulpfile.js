@@ -9,6 +9,7 @@ elixir.config.css.minifier.pluginOptions = {
     compatibility: 'ie7',
     keepSpecialComments: 0
 };
+elixir.config.notifications = false;
 
 elixir((mix) => {
 
