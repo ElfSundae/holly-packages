@@ -708,7 +708,9 @@
   border-bottom-color: #eee;
 }
 
-// See: https://github.com/sindresorhus/github-markdown-css#usage
+/**
+ * See: https://github.com/sindresorhus/github-markdown-css#usage
+ */
 
 .markdown-body {
     box-sizing: border-box;
