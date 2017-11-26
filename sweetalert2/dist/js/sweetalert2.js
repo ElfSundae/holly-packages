@@ -1,5 +1,5 @@
 /*!
- * sweetalert2 v7.0.3
+ * sweetalert2 v7.0.5
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -192,6 +192,9 @@ var states = {
   var checkbox = popup.querySelector('.' + swalClasses.checkbox + ' input');
   var textarea = getChildByClass(popup, swalClasses.textarea);
 
+  // a11y
+  popup.setAttribute('aria-live', params.toast ? 'polite' : 'assertive');
+
   var resetValidationError = function resetValidationError() {
     sweetAlert.isVisible() && sweetAlert.resetValidationError();
   };
@@ -381,6 +384,11 @@ var removeStyleProperty = function removeStyleProperty(elem, property) {
 };
 
 var animationEndEvent = function () {
+  // Prevent run in Node env
+  if (typeof document === 'undefined') {
+    return false;
+  }
+
   var testEl = document.createElement('div');
   var transEndEventNames = {
     'WebkitAnimation': 'webkitAnimationEnd',
@@ -864,6 +872,11 @@ var undoIOSfix = function undoIOSfix() {
 var sweetAlert = function sweetAlert() {
   for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
+  }
+
+  // Prevent run in Node env
+  if (typeof window === 'undefined') {
+    return;
   }
 
   if (args[0] === undefined) {
@@ -1802,14 +1815,14 @@ sweetAlert.adaptInputValidator = function (legacyValidator) {
 
 sweetAlert.noop = function () {};
 
-sweetAlert.version = '7.0.3';
+sweetAlert.version = '7.0.5';
 
 sweetAlert.default = sweetAlert;
 
 return sweetAlert;
 
 })));
-if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
+if (typeof window !== 'undefined' && window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
 
 (function(swal) {
   "use strict";
