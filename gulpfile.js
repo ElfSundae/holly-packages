@@ -101,7 +101,7 @@ elixir((mix) => {
             './datatables/datatables-defaults.js',
             './datatables/datatables-helper.js',
         ],
-        destPath('datatables/dist/js/dataTables-responsive-bs.js')
+        destPath('datatables/dist/js/datatables-responsive-bs.js')
     )
     .styles(
         [
@@ -110,7 +110,7 @@ elixir((mix) => {
             './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
             './datatables/datatables-FontAwesome.css'
         ],
-        destPath('datatables/dist/css/dataTables-responsive-bs.css')
+        destPath('datatables/dist/css/datatables-responsive-bs.css')
     );
 
     // FastClick
