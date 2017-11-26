@@ -20,21 +20,21 @@ elixir((mix) => {
             './node_modules/admin-lte/dist/js/adminlte.js',
             './admin-lte/AdminLTE-custom.js'
         ],
-        destPath('admin-lte/dist/js/AdminLTE.js')
+        destPath('admin-lte/dist/js/admin-lte.js')
     )
     .replace(
         'node_modules/admin-lte/dist/css/AdminLTE.css',
         "url('../img/",
         "url('../img/admin-lte/",
-        'tmp/AdminLTE.css'
+        'tmp/admin-lte.css'
     )
     .styles(
         [
-            './tmp/AdminLTE.css',
+            './tmp/admin-lte.css',
             './node_modules/admin-lte/dist/css/skins/_all-skins.css',
             './admin-lte/AdminLTE-custom.css'
         ],
-        destPath('admin-lte/dist/css/AdminLTE.css')
+        destPath('admin-lte/dist/css/admin-lte.css')
     )
     .copy(
         'node_modules/admin-lte/dist/img/boxed-bg.jpg',
