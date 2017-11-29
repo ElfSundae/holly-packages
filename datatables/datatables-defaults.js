@@ -12,6 +12,7 @@
       "loadingRecords": "加载中...",
       "processing": '<div class="datatables-processing" style="color:#008d4c"><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> 处理中...</div>',
       "search": "<i class='fa fa-search'></i>",
+      "searchPlaceholder": "搜索",
       "zeroRecords": "<span style='color:red'>没有匹配的数据</span>",
       "paginate": {
         "first": "<i class='fa fa-step-backward'></i>",
