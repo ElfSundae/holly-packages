@@ -95,6 +95,8 @@ elixir((mix) => {
         [
             './node_modules/datatables.net/js/jquery.dataTables.js',
             './node_modules/datatables.net-bs/js/dataTables.bootstrap.js',
+            './node_modules/datatables.net-buttons/js/dataTables.buttons.js',
+            './node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.js',
             './node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.js',
             './node_modules/datatables.net-responsive/js/dataTables.responsive.js',
             './node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js',
@@ -106,6 +108,7 @@ elixir((mix) => {
     .styles(
         [
             './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
+            './node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css',
             './node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css',
             './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
             './datatables/datatables-FontAwesome.css'
