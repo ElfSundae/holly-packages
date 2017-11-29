@@ -90,30 +90,44 @@ elixir((mix) => {
         destPath('bootstrap/dist/js/bootstrap.js')
     );
 
-    // dataTables
+    // DataTables
     mix.scripts(
         [
             './node_modules/datatables.net/js/jquery.dataTables.js',
             './node_modules/datatables.net-bs/js/dataTables.bootstrap.js',
-            './node_modules/datatables.net-buttons/js/dataTables.buttons.js',
-            './node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.js',
-            './node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.js',
             './node_modules/datatables.net-responsive/js/dataTables.responsive.js',
             './node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js',
             './datatables/datatables-defaults.js',
-            './datatables/datatables-helper.js',
+            './datatables/datatables-helper.js'
         ],
         destPath('datatables/dist/js/datatables-bootstrap.js')
     )
     .styles(
         [
             './node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
-            './node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css',
-            './node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css',
-            './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
-            './datatables/datatables-FontAwesome.css'
+            './datatables/datatables-FontAwesome.css',
+            './node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css'
         ],
         destPath('datatables/dist/css/datatables-bootstrap.css')
+    )
+    .scripts(
+        [
+            './node_modules/datatables.net-buttons/js/dataTables.buttons.js',
+            './node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.js'
+        ],
+        destPath('datatables/dist/js/datatables-buttons-bs.js')
+    )
+    .styles(
+        './node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css',
+        destPath('datatables/dist/css/datatables-buttons-bs.css')
+    )
+    .scripts(
+        './node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.js',
+        destPath('datatables/dist/js/datatables-fixedheader.js')
+    )
+    .styles(
+        './node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css',
+        destPath('datatables/dist/css/datatables-fixedheader-bs.css')
     );
 
     // FastClick
