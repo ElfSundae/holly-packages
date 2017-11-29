@@ -3,7 +3,6 @@
 
   $.extend($.fn.dataTable.defaults, {
     "responsive": true,
-    "fixedHeader": true,
     "pagingType": "full_numbers",
     "lengthMenu": [15, 30, 50, 100],
     "pageLength": 15,
