@@ -3,6 +3,10 @@
 
   $.extend($.fn.dataTable.defaults, {
     "pagingType": "full_numbers",
+    "lengthMenu": [15, 30, 50, 100],
+    "pageLength": 15,
+    "responsive": true,
+    "fixedHeader": true,
     "language": {
       "emptyTable": "<span style='color:red'>无数据</span>",
       "info": "当前 _START_-_END_ 项，共 _TOTAL_ 项",
