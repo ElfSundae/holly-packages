@@ -28,6 +28,7 @@
     "bootnotify": "^1.0.6",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
+    "cli-usage": "^0.1.7",
     "clipboard": "^1.7.1",
     "datatables.net-bs": "^1.10.16",
     "datatables.net-buttons-bs": "^1.5.1",
